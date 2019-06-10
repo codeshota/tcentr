@@ -33,7 +33,12 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#custom
 
 group :production do
   gem 'pg'
 end
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'simple_form'
+gem 'jquery-rails'
