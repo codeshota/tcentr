@@ -42,3 +42,4 @@ end
 gem 'bootstrap', '~> 4.3.1'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'devise', '~> 4.6', '>= 4.6.2'
