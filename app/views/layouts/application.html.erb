@@ -11,12 +11,18 @@
 
   <body>
 
-  <%= render partial: "shared/navigation" %>
+  <%= render partial: "shared/header" %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <main class="mt-5">
 
-  <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+  </main>
+
+  <%= render partial: "shared/footer" %>
 
   </body>
 </html>
