@@ -34,7 +34,7 @@
                 <h4 class="card-title">
                   <%= link_to item.title, item_path(item) %>
                 </h4>
-                <p class="card-text"><%= truncate(strip_tags(item.description), length: 20) %></p>
+                <p class="card-text"><%= truncate(strip_tags(item.description), length: 50) %></p>
                 <p>$<%= item.price %></p>
               </div>
             </div>

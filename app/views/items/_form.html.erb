@@ -1,6 +1,7 @@
 <%= simple_form_for @item do |f| %>
   <p class="mb-2">Select Category:</p>
-  <%= f.select :category_id, @categories, {}, {class: "form-control mb-3"} %>
+  <%= select_tag :category_id, options_for_select(@categories), class: "form-control mb-3" %>
+  <%= f.file_field :item_img %>
   <%= f.input :title, label: "Item Title" %>
   <%= f.input :description %>
   <%= f.input :price %>
