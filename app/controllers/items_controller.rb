@@ -10,10 +10,12 @@ class ItemsController < ApplicationController
 
   def new
     @item = current_user.items.build
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @item = current_user.items.build(item_params)
+    @item.category_id = params[:category_id]
 
     if @item.save
       redirect_to items_path
@@ -23,9 +25,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @item.category_id = params[:category_id]
+
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
@@ -41,7 +46,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description)
+    params.require(:item).permit(:title, :description, :category_id)
   end
 
   def find_item
