@@ -1,0 +1,28 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Business App</a>
+    <%#= link_to "Home", root_path  %>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mr-5" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "About", about_path, class: "nav-link"  %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <%if current_user %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nbtn btn-outline-light" %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-light mr-3" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light" %>
+    <% end %>
+  </div>
+</nav>
