@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Tcentr</title>
     <%= csrf_meta_tags %>
@@ -12,13 +12,11 @@
   <body>
 
   <%= render partial: "shared/navigation" %>
-  <%= render partial: "shared/header" %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
 
-  <%= render partial: "shared/footer" %>
   </body>
 </html>
