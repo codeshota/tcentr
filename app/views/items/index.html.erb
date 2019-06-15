@@ -2,8 +2,12 @@
   <h1>Items Catalog</h1>
 
   <div class="dropdown mb-3">
-    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Choose Category
+    <button class="btn btn-dark dropdown-toggle items-filter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <% if params[:category].blank? %>
+        Choose Category
+      <% else %>
+        <%= params[:category] %>
+      <% end %>
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <% Category.all.each do |c| %>
@@ -12,11 +16,14 @@
     </div>
   </div>
 
-  <% @items.each do |item| %>
-    <h2> <%= link_to item.title, item_path(item) %> </h2>
-  <% end %>
-
-  <% if current_user && current_user.admin %>
-    <%= link_to "Add Item", new_item_path, class: "btn btn-primary mt-3" %>
+  <% if @items.count == 0 %>
+    <p>There are no items in this category</p>
+  <% else %>
+    <% @items.each do |item| %>
+      <h2> <%= link_to item.title, item_path(item) %> </h2>
+    <% end %>
+    <% if current_user && current_user.admin %>
+      <%= link_to "Add Item", new_item_path, class: "btn btn-primary mt-3" %>
+    <% end %>
   <% end %>
 </div>
