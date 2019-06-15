@@ -6,6 +6,6 @@
   <% end %>
 
   <% if current_user && current_user.admin %>
-    <%= link_to "Add Item", new_item_path  %>
+    <%= link_to "Add Item", new_item_path, class: "btn btn-primary mt-3" %>
   <% end %>
 </div>

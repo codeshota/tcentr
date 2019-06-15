@@ -1,6 +1,7 @@
 <%= simple_form_for @item do |f| %>
-  <%= select_tag(:category_id, options_for_select(@categories), prompt: "Select Category") %>
+  <p class="mb-2">Select Category</p>
+  <%= f.select :category_id, @categories, {}, {class: "form-control mb-3"} %>
   <%= f.input :title, label: "Item Title" %>
   <%= f.input :description %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-primary mt-3" %>
 <% end %>
