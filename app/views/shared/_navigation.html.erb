@@ -8,17 +8,20 @@
     <div class="collapse navbar-collapse mr-5" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link"  %>
+          <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
+          <%= link_to "Catalog", items_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
     </div>
-    <%if current_user %>
+    <% if current_user %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nbtn btn-outline-light" %>
     <% else %>
       <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-light mr-3" %>
