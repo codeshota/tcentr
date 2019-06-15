@@ -1,11 +1,17 @@
-<h1>Show Item</h1>
+<div class="container">
 
-<h2><%= @item.title %></h2>
-<p><%= @item.description %></p>
+  <h1>Show Item</h1>
+
+  <h2><%= @item.title %></h2>
+  <p><%= @item.description %></p>
 
 
 
-<% if current_user && current_user.admin %>
-<%= link_to "Edit", edit_item_path(@item)  %>
-<%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you shure?" } %>
-<% end %>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Edit", edit_item_path(@item)  %>
+    <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you shure?" } %>
+  <% end %>
+
+</div>
+
+

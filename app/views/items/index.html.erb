@@ -5,5 +5,7 @@
     <h2> <%= link_to item.title, item_path(item) %> </h2>
   <% end %>
 
-  <%= link_to "Add Item", new_item_path  %>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Add Item", new_item_path  %>
+  <% end %>
 </div>
