@@ -1,6 +1,17 @@
 <div class="container">
   <h1>Items Catalog</h1>
 
+  <div class="dropdown mb-3">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Choose Category
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <% Category.all.each do |c| %>
+        <%= link_to c.name, items_path(category: c.name), class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
+
   <% @items.each do |item| %>
     <h2> <%= link_to item.title, item_path(item) %> </h2>
   <% end %>
